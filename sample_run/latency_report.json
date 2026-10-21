@@ -1,0 +1,13 @@
+{
+  "total_decisions": 205,
+  "latency_p50_ms": 49.07,
+  "latency_p95_ms": 89.15,
+  "latency_p99_ms": 118.95,
+  "max_latency_ms": 6400.0,
+  "sla_60s_target_breaches": 0,
+  "sla_5m_hard_failures": 0,
+  "avg_model_calls_per_decision": 1.0,
+  "avg_tool_calls_per_decision": 1.0,
+  "model_budget_breaches": 0,
+  "tool_budget_breaches": 0
+}

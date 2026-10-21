@@ -1,0 +1,60 @@
+{
+  "viewer_id": "V-0002",
+  "facts": {
+    "preferred_dialect": {
+      "fact_key": "preferred_dialect",
+      "value": "d3",
+      "source": "app_setting",
+      "recorded_at": "2026-09-12T12:21:12Z",
+      "freshness_s": 0.0,
+      "conflicts": []
+    },
+    "subscription_status": {
+      "fact_key": "subscription_status",
+      "value": "free",
+      "source": "default",
+      "recorded_at": "2026-09-12T12:21:12Z",
+      "freshness_s": 0.0,
+      "conflicts": []
+    },
+    "consent_push": {
+      "fact_key": "consent_push",
+      "value": false,
+      "source": "default",
+      "recorded_at": "2026-09-12T12:21:12Z",
+      "freshness_s": 0.0,
+      "conflicts": []
+    },
+    "consent_whatsapp": {
+      "fact_key": "consent_whatsapp",
+      "value": false,
+      "source": "default",
+      "recorded_at": "2026-09-12T12:21:12Z",
+      "freshness_s": 0.0,
+      "conflicts": []
+    }
+  },
+  "active_goal": {
+    "goal_id": "first_full_episode_3d",
+    "name": "first_full_episode_3d",
+    "version": "v1",
+    "selected_at": "2026-09-12T12:21:12Z",
+    "deadline": "2026-09-15T12:21:12Z",
+    "success_signal": "full_episode_completion",
+    "target_metric": "full_episode_completion",
+    "evidence_ids": [
+      "goal_rule:G02-v1",
+      "event:E10006"
+    ],
+    "status": "ACTIVE"
+  },
+  "goal_history": [],
+  "watched_titles": [
+    "T0037"
+  ],
+  "completed_episodes": 0,
+  "daily_messages_sent": {},
+  "last_event_time": "2026-09-12T12:21:00Z",
+  "last_seen_event_id": "E10006",
+  "version": 4
+}

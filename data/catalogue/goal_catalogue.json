@@ -1,0 +1,253 @@
+[
+  {
+    "goal_id": "G01",
+    "name": "first_stream_24h",
+    "version": "v1",
+    "description": "New viewer streams first episode within 24 hours of sign-up",
+    "target_metric": "first_play",
+    "deadline_window_s": 86400,
+    "eligibility": {
+      "max_account_age_s": 86400,
+      "max_completed_plays": 0,
+      "requires_subscription": false
+    },
+    "success_conditions": {
+      "event_type": "play",
+      "min_duration_s": 30
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G02",
+    "name": "first_full_episode_3d",
+    "version": "v1",
+    "description": "Viewer completes first full episode within 3 days (v1: 100% duration)",
+    "target_metric": "full_episode_completion",
+    "deadline_window_s": 259200,
+    "eligibility": {
+      "max_completed_plays": 0,
+      "requires_subscription": false
+    },
+    "success_conditions": {
+      "event_type": "play",
+      "min_progress_pct": 100.0
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G02",
+    "name": "first_full_episode_3d",
+    "version": "v2",
+    "description": "Viewer completes first full episode within 3 days (v2: >= 85% progress, excluding end credits)",
+    "target_metric": "full_episode_completion",
+    "deadline_window_s": 259200,
+    "eligibility": {
+      "max_completed_plays": 0,
+      "requires_subscription": false
+    },
+    "success_conditions": {
+      "event_type": "play",
+      "min_progress_pct": 85.0
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G03",
+    "name": "browse_to_watch_1h",
+    "version": "v1",
+    "description": "Active browsing viewer starts streaming within 1 hour",
+    "target_metric": "stream_start",
+    "deadline_window_s": 3600,
+    "eligibility": {
+      "min_session_searches_or_views": 1,
+      "active_play_in_session": false
+    },
+    "success_conditions": {
+      "event_type": "play",
+      "min_duration_s": 10
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G04",
+    "name": "return_day_2_visit",
+    "version": "v1",
+    "description": "Viewer returns for a visit on day 2 following initial signup/activity",
+    "target_metric": "day_2_retention",
+    "deadline_window_s": 172800,
+    "eligibility": {
+      "min_account_age_days": 1,
+      "max_account_age_days": 2,
+      "visited_day_2": false
+    },
+    "success_conditions": {
+      "event_type": "app_open",
+      "min_day_offset": 1
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G05",
+    "name": "first_paid_plan_7d",
+    "version": "v1",
+    "description": "Trial or free user purchases a paid subscription within 7 days",
+    "target_metric": "subscription_conversion",
+    "deadline_window_s": 604800,
+    "eligibility": {
+      "subscription_status_in": [
+        "free",
+        "trial"
+      ],
+      "has_active_subscription": false
+    },
+    "success_conditions": {
+      "event_type": "purchase",
+      "purchase_status": "success"
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G06",
+    "name": "renew_subscription_48h",
+    "version": "v1",
+    "description": "Expiring subscriber renews plan within 48 hours of expiration warning",
+    "target_metric": "subscription_renewal",
+    "deadline_window_s": 172800,
+    "eligibility": {
+      "subscription_status_in": [
+        "expiring",
+        "due_renewal"
+      ]
+    },
+    "success_conditions": {
+      "event_type": "purchase",
+      "purchase_status": "success"
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G07",
+    "name": "reengage_churned_14d",
+    "version": "v1",
+    "description": "Viewer inactive for >= 14 days returns to watch content",
+    "target_metric": "churn_reengagement",
+    "deadline_window_s": 604800,
+    "eligibility": {
+      "days_since_last_active_min": 14
+    },
+    "success_conditions": {
+      "event_type": "app_open"
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G08",
+    "name": "weekend_binge_watch",
+    "version": "v1",
+    "description": "Engaged viewer watches >= 3 episodes over the weekend",
+    "target_metric": "binge_consumption",
+    "deadline_window_s": 172800,
+    "eligibility": {
+      "is_weekend": true,
+      "min_plays_last_7d": 1
+    },
+    "success_conditions": {
+      "event_type": "play",
+      "min_completed_episodes_in_window": 3
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G09",
+    "name": "dialect_exploration_5d",
+    "version": "v1",
+    "description": "Viewer explores content in a secondary dialect within 5 days",
+    "target_metric": "catalog_breadth",
+    "deadline_window_s": 432000,
+    "eligibility": {
+      "min_plays_primary_dialect": 3,
+      "plays_secondary_dialect": 0
+    },
+    "success_conditions": {
+      "event_type": "play",
+      "is_secondary_dialect": true
+    },
+    "is_measurable": true,
+    "missing_signal": null
+  },
+  {
+    "goal_id": "G10",
+    "name": "social_share_episode",
+    "version": "v1",
+    "description": "Viewer shares an episode to social channels (e.g. WhatsApp, Instagram)",
+    "target_metric": "viral_share",
+    "deadline_window_s": 259200,
+    "eligibility": {
+      "completed_plays_min": 1
+    },
+    "success_conditions": {
+      "event_type": "social_share"
+    },
+    "is_measurable": false,
+    "missing_signal": "social_share event is absent from telemetry stream"
+  },
+  {
+    "goal_id": "G11",
+    "name": "high_satisfaction_rating",
+    "version": "v1",
+    "description": "Viewer submits a 5-star rating or high CSAT score for watched show",
+    "target_metric": "user_rating",
+    "deadline_window_s": 259200,
+    "eligibility": {
+      "completed_plays_min": 1
+    },
+    "success_conditions": {
+      "event_type": "rating_submitted"
+    },
+    "is_measurable": false,
+    "missing_signal": "rating_submitted event is absent from telemetry stream"
+  },
+  {
+    "goal_id": "G12",
+    "name": "micro_drama_completion_48h",
+    "version": "v1",
+    "description": "Viewer completes an entire micro-drama series within 48h (underspecified in v1: ongoing vs finished series)",
+    "target_metric": "micro_drama_series_completion",
+    "deadline_window_s": 172800,
+    "eligibility": {
+      "started_micro_drama": true
+    },
+    "success_conditions": {
+      "event_type": "play",
+      "series_completed": true
+    },
+    "is_measurable": true,
+    "underspecified_note": "Rule v1 does not specify series completion for open-ended ongoing series. Corrected in v2 to min 5 consecutive episodes."
+  },
+  {
+    "goal_id": "G12",
+    "name": "micro_drama_completion_48h",
+    "version": "v2",
+    "description": "Viewer watches at least 5 consecutive micro-drama episodes within 48h",
+    "target_metric": "micro_drama_series_completion",
+    "deadline_window_s": 172800,
+    "eligibility": {
+      "started_micro_drama": true
+    },
+    "success_conditions": {
+      "event_type": "play",
+      "min_episodes_in_window": 5
+    },
+    "is_measurable": true,
+    "underspecified_note": "Corrected in v2 to avoid dependency on indeterminate catalogue episode releases."
+  }
+]

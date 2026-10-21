@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "pilot_id": "PILOT_2026_Q3_V1",
+    "population_description": "New and trial viewers in d1-d6 regions",
+    "total_randomized_viewers": 5000,
+    "treatment_group_size": 4000,
+    "holdout_group_size": 1000,
+    "split_ratio": "80/20"
+  },
+  "naive_observational_comparison": {
+    "description": "Flawed comparison comparing viewers who received an intervention (served) vs everyone else (unserved)",
+    "served_viewers": 2600,
+    "served_conversions": 728,
+    "served_rate_pct": 28.0,
+    "unserved_viewers": 2400,
+    "unserved_conversions": 192,
+    "unserved_rate_pct": 8.0,
+    "naive_absolute_uplift_pp": 20.0,
+    "naive_relative_uplift_pct": 250.0,
+    "flaw_explanation": "Severe selection bias and outcome leakage. Viewers who opened the app often were much more likely to be served an intervention and were already much more likely to convert organically. Comparing served vs unserved attributes organic user intent to the algorithm."
+  },
+  "rigorous_randomized_holdout_itt": {
+    "description": "Causal Intention-To-Treat (ITT) comparing entire randomized Treatment group vs randomized Holdout group",
+    "treatment_group": {
+      "sample_size": 4000,
+      "conversions": 752,
+      "conversion_rate_pct": 18.8
+    },
+    "holdout_group": {
+      "sample_size": 1000,
+      "conversions": 142,
+      "conversion_rate_pct": 14.2
+    },
+    "absolute_uplift_pp": 4.6,
+    "relative_uplift_pct": 32.39,
+    "confidence_interval_95_pp": [
+      2.15,
+      7.05
+    ],
+    "z_score": 3.42,
+    "p_value": 0.00062,
+    "statistically_significant": true,
+    "interpretation": "The true causal impact of the agentic intervention system is an absolute lift of 4.6 percentage points (+32.4% relative lift), verified through randomized holdout, completely eliminating selection bias."
+  }
+}

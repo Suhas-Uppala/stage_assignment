@@ -1,0 +1,75 @@
+[
+  {
+    "action_type": "HOME_PAGE",
+    "channel": "in_app",
+    "description": "Personalized row of recommended titles on the home screen",
+    "constraints": {
+      "min_titles": 3,
+      "max_titles": 10,
+      "quiet_hours_enforced": false,
+      "consent_required": null,
+      "daily_frequency_cap": null
+    }
+  },
+  {
+    "action_type": "HERO_SLOT",
+    "channel": "in_app",
+    "description": "Prominent top banner spotlighting one featured title",
+    "constraints": {
+      "min_titles": 1,
+      "max_titles": 1,
+      "quiet_hours_enforced": false,
+      "consent_required": null,
+      "daily_frequency_cap": null
+    }
+  },
+  {
+    "action_type": "PUSH_NOTIFICATION",
+    "channel": "push",
+    "description": "Mobile push notification to re-engage or alert viewer",
+    "constraints": {
+      "min_titles": 1,
+      "max_titles": 1,
+      "quiet_hours_enforced": true,
+      "consent_required": "consent_push",
+      "daily_frequency_cap": 1
+    }
+  },
+  {
+    "action_type": "WHATSAPP",
+    "channel": "whatsapp",
+    "description": "WhatsApp message with deep link to content or subscription offer",
+    "constraints": {
+      "min_titles": 1,
+      "max_titles": 1,
+      "quiet_hours_enforced": true,
+      "consent_required": "consent_whatsapp",
+      "daily_frequency_cap": 1,
+      "template_required": true
+    }
+  },
+  {
+    "action_type": "IN_APP_MESSAGE",
+    "channel": "in_app",
+    "description": "Contextual modal or toast displayed inside the active app session",
+    "constraints": {
+      "min_titles": 1,
+      "max_titles": 2,
+      "quiet_hours_enforced": false,
+      "consent_required": null,
+      "daily_frequency_cap": 2
+    }
+  },
+  {
+    "action_type": "NO_ACTION",
+    "channel": "none",
+    "description": "Intentionally abstain from action due to policy, quiet hours, or insufficient evidence",
+    "constraints": {
+      "min_titles": 0,
+      "max_titles": 0,
+      "quiet_hours_enforced": false,
+      "consent_required": null,
+      "daily_frequency_cap": null
+    }
+  }
+]
